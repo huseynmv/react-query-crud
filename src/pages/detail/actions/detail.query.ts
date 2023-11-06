@@ -7,22 +7,10 @@ export const usePosts = (id: number | string) => {
   });
 };
 
-// export const useAddPost = () => {
-//   const queryClient = useQueryClient();
-//   return useMutation({
-//     mutationFn: (post: any) => {
-//       return addPost(post);
-//     },
-//     onSuccess: () => {
-//       queryClient.invalidateQueries();
-//     },
-//   });
-// };
-
-export const useUpdatePost = () => {
+export const useUpdatePost = (id: any) => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (id: any, post: any) => {
+    mutationFn: (post: any) => {
       return updateService(id, post);
     },
     onSuccess: () => {

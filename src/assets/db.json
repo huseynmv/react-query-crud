@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": 2,
-      "title": "This is title 2",
-      "body": "This is body 2"
+      "title": "salam",
+      "body": "slaam",
+      "id": 2
     },
     {
       "title": "test",
@@ -14,6 +14,11 @@
       "title": "testasa",
       "body": "saassa",
       "id": 5
+    },
+    {
+      "title": "testsasa",
+      "body": "saassa",
+      "id": 6
     }
   ]
 }

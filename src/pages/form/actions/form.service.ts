@@ -1,14 +1,6 @@
+import { API } from "../../../core/configs/api.config";
+import axiosInstance from "../../../core/configs/axios.config";
+
 export const addPost = (post: any) => {
-  return fetch("http://localhost:3000/posts", {
-    method: "POST",
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(post),
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      return res;
-    });
+  return axiosInstance.post(API.posts, post).then((res) => res.data);
 };

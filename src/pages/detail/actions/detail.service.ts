@@ -6,7 +6,7 @@ export const getPostServiceById = (id: number | string) => {
     });
 };
 
-export const updateService = (post: any, id: any) => {
+export const updateService = (id: any, post: any) => {
   const data = {
     title: post.title,
     body: post.body,
@@ -20,7 +20,7 @@ export const updateService = (post: any, id: any) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      // console.log("suceeees");
+      console.log(id);
       return data;
     });
 };

@@ -10,7 +10,7 @@ const DetailComponent = () => {
   const id = pathname.split("/")[2];
   console.log(id);
 
-  const updatePost = useUpdatePost();
+  const updatePost = useUpdatePost(id);
 
   const { data } = usePosts(id);
 
@@ -22,7 +22,7 @@ const DetailComponent = () => {
   const onSubmit = useCallback(
     (values: any) => {
       console.log(values);
-      updatePost.mutate(id, values);
+      updatePost.mutate(values);
     },
     [updatePost]
   );
