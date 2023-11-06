@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { generateGuid } from "../../core/helpers/generate-guid";
 import { Table } from "antd";
-import { deletePost, usePosts } from "./actions/table.query";
+import { deletePost, usePosts } from "./actions/table.mutation";
 import { Link } from "react-router-dom";
 const TableComponent = () => {
   const { data, isLoading } = usePosts();

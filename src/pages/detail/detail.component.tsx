@@ -1,10 +1,12 @@
 import React, { useCallback } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { usePosts, useUpdatePost } from "./actions/detail.query";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { usePosts, useUpdatePost } from "./actions/detail.mutation";
 import { Button, Form, Input } from "antd";
+import { Routes } from "../../router/routes";
 
 const DetailComponent = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const pathname = location.pathname;
   const id = pathname.split("/")[2];
@@ -13,6 +15,7 @@ const DetailComponent = () => {
   const updatePost = useUpdatePost(id);
 
   const { data } = usePosts(id);
+  console.log(data);
 
   const initialValues = {
     title: data?.title,
@@ -23,6 +26,7 @@ const DetailComponent = () => {
     (values: any) => {
       console.log(values);
       updatePost.mutate(values);
+      navigate(Routes.default);
     },
     [updatePost]
   );

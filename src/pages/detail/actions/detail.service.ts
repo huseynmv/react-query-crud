@@ -1,9 +1,9 @@
+import axios from "axios";
+import { API } from "../../../core/configs/api.config";
+import axiosInstance from "../../../core/configs/axios.config";
+
 export const getPostServiceById = (id: number | string) => {
-  return fetch(`http://localhost:3000/posts/${id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      return data;
-    });
+  return axiosInstance.get(API.posts + "/" + id);
 };
 
 export const updateService = (id: any, post: any) => {
@@ -11,16 +11,5 @@ export const updateService = (id: any, post: any) => {
     title: post.title,
     body: post.body,
   };
-  return fetch(`http://localhost:3000/posts/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(id);
-      return data;
-    });
+  return axiosInstance.put(API.posts + "/" + id, data);
 };

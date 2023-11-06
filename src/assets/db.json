@@ -2,7 +2,7 @@
   "posts": [
     {
       "title": "salam",
-      "body": "slaam",
+      "body": "necesen",
       "id": 2
     },
     {
@@ -19,6 +19,11 @@
       "title": "testsasa",
       "body": "saassa",
       "id": 6
+    },
+    {
+      "title": "salam",
+      "body": "salam",
+      "id": 7
     }
   ]
 }
