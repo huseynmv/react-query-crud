@@ -1,19 +1,8 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { IFormValues } from "./form";
-import {
-  Form,
-  Input,
-  Button,
-  Checkbox,
-  DatePicker,
-  TimePicker,
-  Radio,
-  Select,
-} from "antd";
+import { Form, Input, Button } from "antd";
 import { useAddPost } from "./actions/form.mutation";
-import { useLocation } from "react-router-dom";
 import useLocalization from "../../assets/lang";
-// import { addPost } from "./actions/form.service";
 
 const FormComponent = () => {
   const addPost = useAddPost();

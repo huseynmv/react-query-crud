@@ -1,22 +1,22 @@
-import React, { useCallback } from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { usePosts, useUpdatePost } from "./actions/detail.mutation";
+import { useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useUpdatePost } from "./actions/detail.mutation";
 import { Button, Form, Input } from "antd";
 import { Routes } from "../../router/routes";
 import useLocalization from "../../assets/lang";
+import { usePosts } from "./actions/detail.query";
 
 const DetailComponent = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const translate = useLocalization();
+
   const pathname = location.pathname;
   const id = pathname.split("/")[2];
-  console.log(id);
 
   const updatePost = useUpdatePost(id);
 
   const { data } = usePosts(id);
-  console.log(data);
 
   const initialValues = {
     title: data?.title,

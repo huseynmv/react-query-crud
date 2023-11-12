@@ -1,4 +1,3 @@
-import React from "react";
 import TableComponent from "../table/table.component";
 import FormComponent from "../form/form.component";
 

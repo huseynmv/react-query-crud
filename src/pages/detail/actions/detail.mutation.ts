@@ -1,11 +1,5 @@
-import { useQuery, useQueryClient, useMutation } from "react-query";
-import { getPostServiceById, updateService } from "./detail.service";
-
-export const usePosts = (id: number | string) => {
-  return useQuery<any, Error>("", () => {
-    return getPostServiceById(id);
-  });
-};
+import { useQueryClient, useMutation } from "react-query";
+import { updateService } from "./detail.service";
 
 export const useUpdatePost = (id: any) => {
   const queryClient = useQueryClient();
