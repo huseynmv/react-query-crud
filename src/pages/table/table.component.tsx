@@ -6,6 +6,7 @@ import useLocalization from "../../assets/lang";
 import { usePosts } from "./actions/table.query";
 const TableComponent = () => {
   const { data } = usePosts();
+
   const translate = useLocalization();
   const deletePosts = deletePost();
 
@@ -27,12 +28,14 @@ const TableComponent = () => {
     {
       title: "Actions",
       dataIndex: "actions",
-      render: (record: any) => (
+      render: (_text: any, record: any) => (
         <span>
-          <Link to={`/post/${record.id}`}>{translate("update_btn")}</Link>
+          <Link to={record && `/post/${record.id}`}>
+            {translate("update_btn")}
+          </Link>
           <button
             onClick={() => {
-              deletePosts.mutate(record.id);
+              deletePosts.mutate(record && record.id);
             }}
           >
             {translate("delete_btn")}

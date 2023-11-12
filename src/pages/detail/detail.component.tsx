@@ -25,7 +25,6 @@ const DetailComponent = () => {
 
   const onSubmit = useCallback(
     (values: any) => {
-      console.log(values);
       updatePost.mutate(values);
       navigate(Routes.default);
     },

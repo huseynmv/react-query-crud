@@ -15,7 +15,6 @@ const FormComponent = () => {
 
   const onSubmit = useCallback(
     (values: IFormValues) => {
-      console.log(values);
       addPost.mutate(values);
     },
     [addPost]
