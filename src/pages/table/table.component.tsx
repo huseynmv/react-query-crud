@@ -3,8 +3,10 @@ import { generateGuid } from "../../core/helpers/generate-guid";
 import { Table } from "antd";
 import { deletePost, usePosts } from "./actions/table.mutation";
 import { Link } from "react-router-dom";
+import useLocalization from "../../assets/lang";
 const TableComponent = () => {
   const { data, isLoading } = usePosts();
+  const translate = useLocalization();
   //   console.log(data);
   const deletePosts = deletePost();
 
@@ -28,13 +30,13 @@ const TableComponent = () => {
       dataIndex: "actions",
       render: (text: string, record: any) => (
         <span>
-          <Link to={`/post/${record.id}`}>Update</Link>
+          <Link to={`/post/${record.id}`}>{translate("update_btn")}</Link>
           <button
             onClick={() => {
               deletePosts.mutate(record.id);
             }}
           >
-            Delete
+            {translate("delete_btn")}
           </button>
         </span>
       ),

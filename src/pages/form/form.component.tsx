@@ -11,10 +11,13 @@ import {
   Select,
 } from "antd";
 import { useAddPost } from "./actions/form.mutation";
+import { useLocation } from "react-router-dom";
+import useLocalization from "../../assets/lang";
 // import { addPost } from "./actions/form.service";
 
 const FormComponent = () => {
   const addPost = useAddPost();
+  const translate = useLocalization();
 
   const initialValues: IFormValues = {
     title: "test",
@@ -43,7 +46,7 @@ const FormComponent = () => {
         <Input />
       </Form.Item>
       <Button type="primary" htmlType="submit">
-        Submit
+        {translate("submit_btn")}
       </Button>
     </Form>
   );

@@ -3,11 +3,12 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { usePosts, useUpdatePost } from "./actions/detail.mutation";
 import { Button, Form, Input } from "antd";
 import { Routes } from "../../router/routes";
+import useLocalization from "../../assets/lang";
 
 const DetailComponent = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const translate = useLocalization();
   const pathname = location.pathname;
   const id = pathname.split("/")[2];
   console.log(id);
@@ -46,7 +47,7 @@ const DetailComponent = () => {
           <Input />
         </Form.Item>
         <Button type="primary" htmlType="submit">
-          Submit
+          {translate("submit_update_btn")}
         </Button>
       </Form>
     </>
