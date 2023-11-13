@@ -29,7 +29,7 @@ const FormComponent = () => {
       name="basic"
       layout="vertical"
       onFinish={onSubmit}
-      // className={formStyles.form}
+      className={formStyles.form}
     >
       <Form.Item name="title" label="Title">
         <Input />
