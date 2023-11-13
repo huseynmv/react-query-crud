@@ -9,8 +9,8 @@ const FormComponent = () => {
   const translate = useLocalization();
 
   const initialValues: IFormValues = {
-    title: "test",
-    body: "body",
+    title: "",
+    body: "",
   };
 
   const onSubmit = useCallback(

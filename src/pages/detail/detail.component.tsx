@@ -18,11 +18,6 @@ const DetailComponent = () => {
 
   const { data } = usePosts(id);
 
-  const initialValues = {
-    title: data?.title,
-    body: data?.body,
-  };
-
   const onSubmit = useCallback(
     (values: any) => {
       updatePost.mutate(values);
@@ -34,7 +29,10 @@ const DetailComponent = () => {
   return (
     <>
       <Form
-        initialValues={initialValues}
+        initialValues={{
+          title: (data && data.data.title) || "",
+          body: (data && data.data.body) || "",
+        }}
         name="basic"
         layout="vertical"
         onFinish={onSubmit}
@@ -42,7 +40,7 @@ const DetailComponent = () => {
         <Form.Item name="title" label="Title">
           <Input />
         </Form.Item>
-        <Form.Item name="body" label="body">
+        <Form.Item name="body" label="Body">
           <Input />
         </Form.Item>
         <Button type="primary" htmlType="submit">
