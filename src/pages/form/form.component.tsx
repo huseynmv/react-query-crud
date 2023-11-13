@@ -3,8 +3,11 @@ import { IFormValues } from "./form";
 import { Form, Input, Button } from "antd";
 import { useAddPost } from "./actions/form.mutation";
 import useLocalization from "../../assets/lang";
+import { useFormStyles } from "./form.style";
 
 const FormComponent = () => {
+  const formStyles = useFormStyles();
+
   const addPost = useAddPost();
   const translate = useLocalization();
 
@@ -26,6 +29,7 @@ const FormComponent = () => {
       name="basic"
       layout="vertical"
       onFinish={onSubmit}
+      // className={formStyles.form}
     >
       <Form.Item name="title" label="Title">
         <Input />
