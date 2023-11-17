@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import rootReducer from "./store.reducer";
 import rootReducer from "./store.reducers";
 import { IState } from "./store";
 import { useSelector } from "react-redux";

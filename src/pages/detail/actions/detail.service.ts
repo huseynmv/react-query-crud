@@ -1,7 +1,7 @@
 import { API } from "../../../core/configs/api.config";
 import axiosInstance from "../../../core/configs/axios.config";
 
-export const getPostServiceById = (id: number | string) => {
+export const getPostServiceById = (id: number | string | undefined) => {
   return axiosInstance.get(API.posts + "/" + id);
 };
 

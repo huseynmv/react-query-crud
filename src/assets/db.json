@@ -1,19 +1,19 @@
 {
   "posts": [
     {
-      "title": "testsasa",
-      "body": "saassa",
-      "id": 6
-    },
-    {
-      "title": "sagol",
-      "body": "sagol",
-      "id": 7
-    },
-    {
       "title": "lorem",
       "body": "ipsum",
-      "id": 9
+      "id": 1
+    },
+    {
+      "title": "dolor ",
+      "body": "sit amet",
+      "id": 2
+    },
+    {
+      "title": "salam",
+      "body": "necesen",
+      "id": 3
     }
   ]
 }

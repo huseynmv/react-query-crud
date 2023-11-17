@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient, useMutation } from "react-query";
+import { useQueryClient, useMutation } from "react-query";
 import { addPost } from "./form.service";
 
 export const useAddPost = () => {

@@ -12,23 +12,23 @@ const TableComponent = () => {
 
   const columns = [
     {
-      title: "id",
+      title: translate("table_id"),
       dataIndex: "id",
       width: "80px",
     },
     {
-      title: "title",
+      title: translate("table_title"),
       dataIndex: "title",
     },
     {
-      title: "body",
+      title: translate("table_body"),
       dataIndex: "body",
       ellipsis: true,
     },
     {
-      title: "Actions",
+      title: translate("table_actions"),
       dataIndex: "actions",
-      render: (_text: any, record: any) => (
+      render: (_: string, record: any) => (
         <span>
           <Link to={record && `/post/${record.id}`}>
             {translate("update_btn")}
