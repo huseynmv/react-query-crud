@@ -4,6 +4,7 @@ import { deletePost } from "./actions/table.mutation";
 import { Link } from "react-router-dom";
 import useLocalization from "../../assets/lang";
 import { usePosts } from "./actions/table.query";
+import { IFormValues } from "../form/form";
 const TableComponent = () => {
   const { data } = usePosts();
 
@@ -28,7 +29,7 @@ const TableComponent = () => {
     {
       title: translate("table_actions"),
       dataIndex: "actions",
-      render: (_: string, record: any) => (
+      render: (_: string, record: IFormValues) => (
         <span>
           <Link to={record && `/post/${record.id}`}>
             {translate("update_btn")}

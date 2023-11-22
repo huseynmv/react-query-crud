@@ -8,6 +8,6 @@ export const getPostService = () => {
   });
 };
 
-export const deletePostService = (id: number) => {
+export const deletePostService = (id: string | undefined) => {
   return axiosInstance.delete(API.posts + "/" + id);
 };

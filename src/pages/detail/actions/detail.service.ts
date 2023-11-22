@@ -1,11 +1,12 @@
 import { API } from "../../../core/configs/api.config";
 import axiosInstance from "../../../core/configs/axios.config";
+import { IFormValues } from "../../form/form";
 
-export const getPostServiceById = (id: number | string | undefined) => {
+export const getPostServiceById = (id: string | undefined) => {
   return axiosInstance.get(API.posts + "/" + id);
 };
 
-export const updateService = (id: any, post: any) => {
+export const updateService = (id: string | undefined, post: IFormValues) => {
   const data = {
     title: post.title,
     body: post.body,

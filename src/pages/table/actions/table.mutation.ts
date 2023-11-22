@@ -4,7 +4,7 @@ import { deletePostService } from "./table.service";
 export const deletePost = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (id: number) => {
+    mutationFn: (id: string | undefined) => {
       return deletePostService(id);
     },
     onSuccess: () => {

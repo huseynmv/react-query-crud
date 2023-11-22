@@ -26,7 +26,7 @@ const DetailComponent = () => {
   }
 
   const onSubmit = useCallback(
-    (values: any) => {
+    (values: IFormValues) => {
       updatePost.mutate(values);
       navigate(Routes.default);
     },
